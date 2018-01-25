@@ -44,8 +44,9 @@ https://cdn-shop.adafruit.com/product-files/3686/plantower-pms5003-manual_v2-3.p
 
 ## MODBUS Register Map
 ### System
+```
 40001   Quality Control (3.14159265359)
-
+```
 ### Measured BME680
 ```
 40003   Temperature (C)
@@ -70,7 +71,6 @@ https://cdn-shop.adafruit.com/product-files/3686/plantower-pms5003-manual_v2-3.p
 40035   Particles > 5.0 um / 0.1L air
 40037   Particles > 50  um / 0.1L air
 ```
-
 ### Derived
 ```
 40039   Dewpoint (C)
@@ -107,7 +107,6 @@ https://cdn-shop.adafruit.com/product-files/3686/plantower-pms5003-manual_v2-3.p
 40095   VOC 60 minute average (kOhm)
 40097   VOC 24 hour average (kOhm)
 ```
-
 ## Calculated AQI
 ```  0 -  50 Good
  51 - 100 Moderate
@@ -116,7 +115,6 @@ https://cdn-shop.adafruit.com/product-files/3686/plantower-pms5003-manual_v2-3.p
 201 - 300 Very unhealth
 301 - 500 Hazardous
 ```
-
 ## Reference
 Quality Control
 http://www.binaryconvert.com/result_float.html?decimal=051046049052049053057050054053051053056057055057051
