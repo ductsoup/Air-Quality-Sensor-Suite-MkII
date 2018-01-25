@@ -142,8 +142,10 @@ pm25_60s = CRR_AVG(60, pm25_60m)              # minutely average
 This class approximates dewpoint and air density from the BME680 observations.
 
 ### AQI Air Quality Index and NowCast
-The [Air Quality Index](https://en.wikipedia.org/wiki/Air_quality_index) and 
-[NowCast](https://en.wikipedia.org/wiki/NowCast_(air_quality_index)). Not defined in those standards but useful for what I'm doing I've also implemented a one minute AQI. 
+The AQI class implments [Air Quality Index](https://en.wikipedia.org/wiki/Air_quality_index) and 
+[NowCast](https://en.wikipedia.org/wiki/NowCast_(air_quality_index)) calculations. Not defined in those standards but useful for what I'm doing I've also implemented a one minute AQI. 
+
+Currently the class implements only the PM2.5 and PM10 components. It is however, designed to be easily extended to include O3, CO, SO2 and No2.
 
 ### IAQ Indoor Air Quality
 There isn't a generally accepted standard for indoor air quality that I am aware of however, Bosch has provided a closed source binary called [BSEC](https://www.bosch-sensortec.com/bst/products/all_products/BSEC) for use with the BME680 to do that calculation. Based on the description in the datasheet they're likely doing something similar to what is implemented in the IAQ class. 
