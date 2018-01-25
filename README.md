@@ -47,6 +47,8 @@ I'm using an Adafruit breakout board with the Pimoroni library for their breakou
 * [datasheet](https://cdn-shop.adafruit.com/product-files/3686/plantower-pms5003-manual_v2-3.pdf)
 * https://www.adafruit.com/product/3686
 
+The original design used a PPD42NS or SM-PWM-01A particle sensor which was difficult to interface with anything but an embedded device because you really need hardware interrupts to count the particles in real time. The PMS5003 does all that internally, reports in engineering units and provides a 3.3V compatible serial output making it very easy to interface with a Raspberry Pi.
+
 ![wiring](/img/aqm-mk-II_bb1.jpg)
 
 ## MODBUS Register Map
