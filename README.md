@@ -7,7 +7,7 @@ The two attached sensors read temperature, pressure, humidity, VOC, particulates
 
 ## Usage Notes
 
-sudo python3 main.py
+```sudo python3 main.py```
 
 By default the Modbus slave binds to all active connections. Root privledges are
 requred because we're serving on the Modbus default port 502.
