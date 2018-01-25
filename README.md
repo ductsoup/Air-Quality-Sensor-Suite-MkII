@@ -19,16 +19,14 @@ https://www.raspberrypi.org/documentation/linux/usage/systemd.md
 
 ## Requirements
 
-[Modbus-tk] (https://github.com/ljean/modbus-tk)
+[Modbus-tk](https://github.com/ljean/modbus-tk)
 
-**Pigpio**
-http://abyz.me.uk/rpi/pigpio/index.html
+[Pigpio](http://abyz.me.uk/rpi/pigpio/index.html)
 
 This is used to bitbang GPIO 18 to interface with the PMS5003, just pick another pin 
 if that's inconvenient for what you have in mind. 
 
-**Pimoroni BME680**
-https://github.com/pimoroni/bme680
+[Pimoroni BME680](https://github.com/pimoroni/bme680)
 
 I'm using an Adafruit breakout board with the Pimoroni library for their breakout
 board. The only difference between the two is the default I2C address so we just
