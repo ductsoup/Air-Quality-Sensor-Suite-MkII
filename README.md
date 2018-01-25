@@ -35,10 +35,10 @@ board. The only difference between the two is the default I2C address so we just
 specify which to use when we create the instance like this ```bme680.BME680(i2c_addr=0x77)```.
 
 ## Sensors/Interfaces
-### BME680  I2C bus 0x77
+### BME680 (I2C)
 https://cdn-shop.adafruit.com/product-files/3660/BME680.pdf
 
-### PMS5003 Software serial
+### PMS5003 (software serial)
 https://cdn-shop.adafruit.com/product-files/3686/plantower-pms5003-manual_v2-3.pdf
 
 ![wiring](/img/aqm-mk-II_bb1.jpg)
