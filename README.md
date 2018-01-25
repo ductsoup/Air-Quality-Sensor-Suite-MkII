@@ -33,11 +33,9 @@ board. The only difference between the two is the default I2C address so we just
 specify which to use when we create the instance.
 
 ## Sensors/Interfaces
-**BME680  I2C bus 0x77**
-https://cdn-shop.adafruit.com/product-files/3660/BME680.pdf
+[BME680  I2C bus 0x77](https://cdn-shop.adafruit.com/product-files/3660/BME680.pdf)
 
-**PMS5003 Software serial**
-https://cdn-shop.adafruit.com/product-files/3686/plantower-pms5003-manual_v2-3.pdf
+[PMS5003 Software serial](https://cdn-shop.adafruit.com/product-files/3686/plantower-pms5003-manual_v2-3.pdf)
 
 ## MODBUS Register Map
 ### System
@@ -112,8 +110,3 @@ https://cdn-shop.adafruit.com/product-files/3686/plantower-pms5003-manual_v2-3.p
 201 - 300 Very unhealth
 301 - 500 Hazardous
 ```
-## Reference
-Quality Control
-http://www.binaryconvert.com/result_float.html?decimal=051046049052049053057050054053051053056057055057051
-https://github.com/epsilonrt/mbpoll
-
