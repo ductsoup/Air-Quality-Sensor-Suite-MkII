@@ -3,6 +3,9 @@ A simple, compact and accurate air quality monitor built around a Raspberry Pi 3
 
 The two attached sensors read temperature, pressure, humidity, VOC and particulates. The script then derives other quantities such as dewpoint, air density, air quality index (AQI), NowCast and indoor air quality (IAQ).
 
+* [Air Quality Index](https://en.wikipedia.org/wiki/Air_quality_index)
+* [NowCast](https://en.wikipedia.org/wiki/NowCast_(air_quality_index))
+
 ## Usage Notes
 While tested on Raspian Jessie and Python3 it will probably run on older versions of Python or newer versions of Raspbian with little or no modification.
 
