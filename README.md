@@ -24,7 +24,7 @@ https://www.raspberrypi.org/documentation/linux/usage/systemd.md
 ### Modbus-tk
 https://github.com/ljean/modbus-tk
 
-This provides the MODBUS TCP transport. Values are mapped into holding registeres encoded as an [IEEE 754 32-bit float](https://en.wikipedia.org/wiki/IEEE_754). If you're using Modpoll for testing be aware that tool uses an older IEEE 754 standard so the values it reports will be a little bit off. 
+This provides the MODBUS TCP transport. Values are mapped into holding registeres encoded as an [IEEE 754 32-bit float](https://en.wikipedia.org/wiki/IEEE_754). If you're using Modpoll for testing be aware that tool uses an obsolete IEEE 754 standard so the values it reports will be slightly off. 
 
 If you'd like to send the data to an MQTT broker instead just install Paho and modify the relevant sections in ```main.py```.
 
