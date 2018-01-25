@@ -108,7 +108,7 @@ https://cdn-shop.adafruit.com/product-files/3686/plantower-pms5003-manual_v2-3.p
 40097   VOC 24 hour average (kOhm)
 ```
 
-### Calculated AQI
+## Calculated AQI
 ```  0 -  50 Good
  51 - 100 Moderate
 101 - 150 Unhealthy for sensitive groups
