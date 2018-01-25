@@ -119,11 +119,9 @@ I'm using an Adafruit breakout board with the Pimoroni library for their breakou
 ```
 ## Classes
 ### Cascadable Running/Retained Average 
-The problem is embedded systems can reboot/rest randomly but AQI requires a 24 hour avergage. To work around this, this class allows you to define a one second sample aggregated to a one minute average, cascaded to a one hour average, cascaded to a one day average (lather, rise and repeat for weekly, monthly or annual), writing the results to storage and reloading as necessary between resets. 
+The problem is embedded systems can reboot/rest randomly but AQI requires a 24 hour avergage. To work around this, this class allows you to define a one second sample aggregated to a one minute average, cascaded to a one hour average, cascaded to a one day average (lather, rise and repeat for weekly, monthly or annual), writing the results to storage and reloading as necessary between resets. As you're building history to whatever average, the class will provide the best approximation available.
 
 The caveat with SD storage is you have a finite number of write cycles. To start I've chosen the compromise of writing hourly. If the reset is short duration, it won't significantly compromise the results. 
-
-As you're building history to whatever average, the class will provide the best approximation available. +
 
 ```python
 pm25_24h = CRR_AVG(24, jfile = "pm25_24h")    # daily average (retained)
