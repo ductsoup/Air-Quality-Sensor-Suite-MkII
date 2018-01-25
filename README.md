@@ -36,7 +36,7 @@ This is used to bitbang GPIO 18 to interface with the PMS5003, just pick another
 ### Pimoroni BME680
 https://github.com/pimoroni/bme680
 
-I'm using an Adafruit breakout board with the Pimoroni library for their breakout board. The only difference between the two is the default I2C address so we just specify which to use when we create the instance.
+I'm using an Adafruit breakout board with the Pimoroni library for their breakout board. Both breakout boards are functionally identical, the only difference between them is the default I2C address so we just specify that when we create the instance.
 
 ```bme680.BME680(i2c_addr=0x77)```
 
