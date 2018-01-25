@@ -5,7 +5,7 @@ straightfoward to push the entire collected and calculated data set to an MQTT b
 
 The two attached sensors read temperature, pressure, humidity, VOC, particulates and calculate some useful derived values.
 
-##Usage Notes
+## Usage Notes
 
 sudo python3 main.py
 
@@ -17,7 +17,7 @@ with systemd rather than using cron or rc.local.
 
 https://www.raspberrypi.org/documentation/linux/usage/systemd.md
 
-##Requirements
+## Requirements
 
 Modbus-tk 
 https://github.com/ljean/modbus-tk
@@ -42,7 +42,7 @@ https://cdn-shop.adafruit.com/product-files/3660/BME680.pdf
 PMS5003 Software serial     
 https://cdn-shop.adafruit.com/product-files/3686/plantower-pms5003-manual_v2-3.pdf
 
-##MODBUS Register Map
+## MODBUS Register Map
 System
 40001   Quality Control (3.14159265359)
 
@@ -111,7 +111,7 @@ Calculated AQI
 201 - 300 Very unhealth
 301 - 500 Hazardous
 
-##Reference
+## Reference
 Quality Control
 http://www.binaryconvert.com/result_float.html?decimal=051046049052049053057050054053051053056057055057051
 https://github.com/epsilonrt/mbpoll
