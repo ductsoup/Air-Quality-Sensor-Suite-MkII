@@ -117,11 +117,14 @@ I'm using an Adafruit breakout board with the Pimoroni library for their breakou
 40095   VOC 60 minute average (kOhm)
 40097   VOC 24 hour average (kOhm)
 ```
-## Cascadable running/retained average class
-I've not come across any solution like this so I made one. If I've reinvented the wheel it won't be the first time.
-
+## Classes
+### Cascadable Running/Retained Average 
 The problem is embedded systems can reboot/rest randomly but AQI requires a 24 hour avergage. To work around this, this class allows you to define a one second sample aggregated to a one minute average, cascaded to a one hour average, cascaded to a one day average (lather, rise and repeat for weekly, monthly or annual), writing the results to storage and reloading as necessary between resets. 
 
 The caveat with SD storage is you have a finite number of write cycles. To start I've chosen the compromise of writing hourly. If the reset is short duration, it won't significantly compromise the results. 
 
 As you're building history to whatever average, the class will provide the best approximation available. 
+
+### Unit Conversion
+Weather calculations are notorious for mixing SI and imperial units and combining constants making them sometimes difficult to follow. Even with SI it's common to switch back and forth between units likke Celsius and Kelvin. To simplify, pass an SI value when you initialize the object. You can then read the value in any relavant unit, SI or imperial.
+
