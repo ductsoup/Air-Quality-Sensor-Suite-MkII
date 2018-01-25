@@ -109,7 +109,7 @@ The problem is embedded systems can reboot/rest randomly but AQI requires a 24 h
 
 The caveat with SD storage is you have a finite number of write cycles. To start I've chosen the compromise of writing hourly. If the reset is short duration, it won't significantly compromise the results. 
 
-As you're building history to whatever average, the class will provide the best approximation available.
+As you're building history to whatever average, the class will provide the best approximation available. 
 
 ## Disclaimer
-I seriously went down the rabbit hole on this one. The code is a little bit obtuse and might be difficult to read but, I'm pretty confident it is correct.
+I seriously went down the rabbit hole on this one.
