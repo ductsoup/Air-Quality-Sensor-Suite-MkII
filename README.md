@@ -1,11 +1,10 @@
 # Air-Quality-Sensor-Suite-MkII
-A simple, compact and accurate air quality monitor built around a Raspberry Pi 3 or Pi Zero W with the ability to inteface with industrial SCADA systems via 
-Modbus TCP. With a few additional lines of code in the main loop it's relatively 
-straightfoward to push the entire collected and calculated data set to an MQTT broker.
+A simple, compact and accurate air quality monitor built around a Raspberry Pi 3 or Pi Zero W with the ability to inteface with industrial SCADA systems via Modbus TCP. With a few additional lines of code in the main loop it's relatively straightfoward to push the entire collected and calculated data set to an MQTT broker.
 
-The two attached sensors read temperature, pressure, humidity, VOC, particulates and calculate some useful derived values.
+The two attached sensors read temperature, pressure, humidity, VOC and particulates. The script then derives other quantities such as dewpoint, air density, air quality index (AQI), NowCast and indoor air quality (IAQ).
 
 ## Usage Notes
+While tested on Raspian Jessie and Python3 it will probably run on older versions of Python or newer versions of Raspbian with little or no modification.
 
 ```sudo python3 main.py```
 
@@ -110,6 +109,3 @@ The problem is embedded systems can reboot/rest randomly but AQI requires a 24 h
 The caveat with SD storage is you have a finite number of write cycles. To start I've chosen the compromise of writing hourly. If the reset is short duration, it won't significantly compromise the results. 
 
 As you're building history to whatever average, the class will provide the best approximation available. 
-
-## Disclaimer
-I seriously went down the rabbit hole on this one.
