@@ -123,8 +123,13 @@ The problem is embedded systems can reboot/rest randomly but AQI requires a 24 h
 
 The caveat with SD storage is you have a finite number of write cycles. To start I've chosen the compromise of writing hourly. If the reset is short duration, it won't significantly compromise the results. 
 
-As you're building history to whatever average, the class will provide the best approximation available. 
+As you're building history to whatever average, the class will provide the best approximation available. +
 
+```python
+pm25_24h = CRR_AVG(24, jfile = "pm25_24h")    # daily average (retained)
+pm25_60m = CRR_AVG(60, pm25_24h)              # hourly average
+pm25_60s = CRR_AVG(60, pm25_60m)              # minutely average
+```
 ### Unit Conversion
 Weather calculations are notorious for mixing SI and imperial units and combining constants making them difficult to follow. Even with SI it's not uncommon to switch back and forth between units like Celsius and Kelvin.
 
@@ -133,4 +138,5 @@ To simplify, pass an SI value (Celsius) when you initialize a unit conversion ob
 ```python
 Temperature = T(25)
 print(Temperature.C, Temperature.K, Temperature.F, Temperature.R)
+```
 
