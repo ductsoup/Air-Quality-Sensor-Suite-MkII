@@ -1,5 +1,5 @@
 # Air-Quality-Sensor-Suite-MkII
-A simple, compact and very accurate air quality monitor built around a Raspberry Pi 3 or Pi Zero W with the ability to inteface with industrial SCADA systems via 
+A simple, compact and accurate air quality monitor built around a Raspberry Pi 3 or Pi Zero W with the ability to inteface with industrial SCADA systems via 
 Modbus TCP. With a few additional lines of code in the main loop it's relatively 
 straightfoward to push the entire collected and calculated data set to an MQTT broker.
 
@@ -43,10 +43,10 @@ PMS5003 Software serial
 https://cdn-shop.adafruit.com/product-files/3686/plantower-pms5003-manual_v2-3.pdf
 
 ## MODBUS Register Map
-System
+### System
 40001   Quality Control (3.14159265359)
 
-Measured BME680
+### Measured BME680
 40003   Temperature (C)
 40005   Temperature (F)
 40007   Pressure (hPa)
@@ -54,7 +54,7 @@ Measured BME680
 40011   Relative Humidity (%)  
 40013   VOC (kOhm)
 
-Measured PMS5003
+### Measured PMS5003
 40015   PM1.0 standard (ug/m3)
 40017   PM2.5 standard (ug/m3)
 40019   PM10 standard (ug/m3)
@@ -68,7 +68,7 @@ Measured PMS5003
 40035   Particles > 5.0 um / 0.1L air
 40037   Particles > 50  um / 0.1L air
 
-Derived
+### Derived
 40039   Dewpoint (C)
 40041   Dewpoint (F)
 40043   Partial pressure water vapor (hPa)
