@@ -33,13 +33,13 @@ I'm using an Adafruit breakout board with the Pimoroni library for their breakou
 
 ## Sensors/Interfaces
 ### BME680 (I2C) 
-[datasheet](https://cdn-shop.adafruit.com/product-files/3660/BME680.pdf)
-https://shop.pimoroni.com/products/bme680
-https://www.adafruit.com/product/3660
+* [datasheet](https://cdn-shop.adafruit.com/product-files/3660/BME680.pdf)
+* https://shop.pimoroni.com/products/bme680
+* https://www.adafruit.com/product/3660
 
 ### PMS5003 (software serial)
-[datasheet](https://cdn-shop.adafruit.com/product-files/3686/plantower-pms5003-manual_v2-3.pdf)
-https://www.adafruit.com/product/3686
+* [datasheet](https://cdn-shop.adafruit.com/product-files/3686/plantower-pms5003-manual_v2-3.pdf)
+* https://www.adafruit.com/product/3686
 
 ![wiring](/img/aqm-mk-II_bb1.jpg)
 
