@@ -138,7 +138,7 @@ pm25_60m = CRR_AVG(60, pm25_24h)              # hourly average
 pm25_60s = CRR_AVG(60, pm25_60m)              # minutely average
 ```
 
-### AQI Air Quality Index
+### AQI Air Quality Index and NowCast
 The [Air Quality Index](https://en.wikipedia.org/wiki/Air_quality_index) and 
 [NowCast](https://en.wikipedia.org/wiki/NowCast_(air_quality_index)). Not defined in those standards but useful for what I'm doing I've also implemented a one minute AQI. 
 
