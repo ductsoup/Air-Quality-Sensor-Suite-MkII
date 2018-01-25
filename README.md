@@ -140,6 +140,7 @@ pm25_60s = CRR_AVG(60, pm25_60m)              # minutely average
 
 ### AQI Air Quality Index
 The [Air Quality Index](https://en.wikipedia.org/wiki/Air_quality_index) and 
-[NowCast](https://en.wikipedia.org/wiki/NowCast_(air_quality_index)). Not defined in those standards but useful for what I'm doing i've also included a 1 minute AQI.
+[NowCast](https://en.wikipedia.org/wiki/NowCast_(air_quality_index)). Not defined in those standards but useful for what I'm doing I've also implemented a 1 minute AQI. 
 
 ### IAQ Indoor Air Quality
+There isn't a generally accepted standard for indoor air quality that I am aware of however, Bosch has provided a closed source binary for use with the BME680 to do that calculation. Based on the description in the datasheet they're likely doing something similar to what is implemented in the IAQ class. 
