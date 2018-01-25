@@ -72,6 +72,7 @@ https://cdn-shop.adafruit.com/product-files/3686/plantower-pms5003-manual_v2-3.p
 ```
 
 ### Derived
+```
 40039   Dewpoint (C)
 40041   Dewpoint (F)
 40043   Partial pressure water vapor (hPa)
@@ -105,14 +106,16 @@ https://cdn-shop.adafruit.com/product-files/3686/plantower-pms5003-manual_v2-3.p
 40093   VOC 60 second average (kOhm)
 40095   VOC 60 minute average (kOhm)
 40097   VOC 24 hour average (kOhm)
+```
 
-Calculated AQI
-  0 -  50 Good
+### Calculated AQI
+```  0 -  50 Good
  51 - 100 Moderate
 101 - 150 Unhealthy for sensitive groups
 151 - 200 Unhealthy
 201 - 300 Very unhealth
 301 - 500 Hazardous
+```
 
 ## Reference
 Quality Control
