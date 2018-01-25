@@ -201,25 +201,6 @@ if __name__ == "__main__":
                 mb_set(40083, aqi.pm10_60m.avg or aqi.pm10_60s.avg)
                 mb_set(40085, aqi.pm10_24h.avg or aqi.pm10_60m.avg or aqi.pm10_60s.avg)
 
-                """
-                # https://en.wikipedia.org/wiki/NowCast_(air_quality_index)
-                # http://www.winsen-sensor.com/products/air-quality-detection-module/ze14-o3.html
-                i = 11
-                b = [0, 0, 0, 0, 0, 0, 0, 0, 0, 71, 0, 0]
-                b = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 71, 0]
-                b = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 71]
-                C = []
-                for k in range(0, min(12, len(b))):
-                    C.append(b[(i-k) % len(b)])
-                w = 1 if sum(C) == 0 else max((min(C) / max(C)), 0.5)
-                yn = yd = 0
-                for k in range(1, len(C)+1):
-                    yn += C[k - 1] * pow(w, k - 1)
-                    yd += pow(w, k - 1)
-                    #print(C[k-1], C[k - 1] * pow(w, k - 1), pow(w, k - 1))
-                #print(C, w, yn, yd, yn / yd)                
-                """
-
             time.sleep(1)
 
     finally:
