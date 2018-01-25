@@ -103,7 +103,7 @@ specify which to use when we create the instance.
 40097   VOC 24 hour average (kOhm)
 ```
 ## Cascadable running/retained average class
-I've not come across anything like this so I made one.
+I've not come across any solution like this so I made one. If I've reinvented the wheel it won't be the first time.
 
 The problem is embedded systems can reboot/rest randomly but AQI requires a 24 hour avergage. To work around this, this class allows you to define a one second sample aggregated to a one minute average, cascaded to a one hour average, cascaded to a one day average (lather, rise and repeat for weekly, monthly or annual), writing the results to storage and reloading as necessary between resets. 
 
