@@ -132,5 +132,5 @@ To simplify, pass an SI value (Celsius) when you initialize a unit conversion ob
 
 ```python
 Temperature = T(25)
-print(Temperature.f)
+print(Temperature.C, Temperature.K, Temperature.F, Temperature.R)
 
