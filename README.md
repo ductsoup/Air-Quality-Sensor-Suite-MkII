@@ -24,6 +24,10 @@ https://www.raspberrypi.org/documentation/linux/usage/systemd.md
 ### Modbus-tk
 https://github.com/ljean/modbus-tk
 
+This provides the MODBUS TCP transport. Values are mapped into holding registeres encoded as an [IEEE 754 32-bit float](https://en.wikipedia.org/wiki/IEEE_754).
+
+If you'd like to send the data to an MQTT broker just install Paho and modify ```main.py```.
+
 ### Pigpio
 http://abyz.me.uk/rpi/pigpio/index.html
 
@@ -33,6 +37,7 @@ This is used to bitbang GPIO 18 to interface with the PMS5003, just pick another
 https://github.com/pimoroni/bme680
 
 I'm using an Adafruit breakout board with the Pimoroni library for their breakout board. The only difference between the two is the default I2C address so we just specify which to use when we create the instance like this.
+
 ```bme680.BME680(i2c_addr=0x77)```
 
 ## Sensors/Interfaces
