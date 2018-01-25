@@ -47,14 +47,16 @@ https://cdn-shop.adafruit.com/product-files/3686/plantower-pms5003-manual_v2-3.p
 40001   Quality Control (3.14159265359)
 
 ### Measured BME680
+```
 40003   Temperature (C)
 40005   Temperature (F)
 40007   Pressure (hPa)
 40009   Pressure (inHg)
 40011   Relative Humidity (%)
 40013   VOC (kOhm)
-
+```
 ### Measured PMS5003
+```
 40015   PM1.0 standard (ug/m3)
 40017   PM2.5 standard (ug/m3)
 40019   PM10 standard (ug/m3)
@@ -67,6 +69,7 @@ https://cdn-shop.adafruit.com/product-files/3686/plantower-pms5003-manual_v2-3.p
 40033   Particles > 2.5 um / 0.1L air
 40035   Particles > 5.0 um / 0.1L air
 40037   Particles > 50  um / 0.1L air
+```
 
 ### Derived
 40039   Dewpoint (C)
