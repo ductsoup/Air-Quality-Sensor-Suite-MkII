@@ -3,9 +3,6 @@ A simple, compact and accurate air quality monitor built around a Raspberry Pi 3
 
 The two attached sensors read temperature, pressure, humidity, VOC and particulates. The script then derives other quantities such as dewpoint, air density, air quality index (AQI), NowCast and indoor air quality (IAQ).
 
-* [Air Quality Index](https://en.wikipedia.org/wiki/Air_quality_index)
-* [NowCast](https://en.wikipedia.org/wiki/NowCast_(air_quality_index))
-
 ## Usage Notes
 While tested on Raspian Jessie and Python3 it will probably run on older versions of Python or newer versions of Raspbian with little or no modification.
 
@@ -118,6 +115,16 @@ I'm using an Adafruit breakout board with the Pimoroni library for their breakou
 40097   VOC 24 hour average (kOhm)
 ```
 ## Classes
+### Unit Conversion
+Weather calculations are notorious for mixing SI and imperial units and combining constants making them difficult to follow. Even with SI it's not uncommon to switch back and forth between units like Celsius and Kelvin.
+
+To simplify, pass an SI value (Celsius) when you initialize a unit conversion object. You can then retrieve the value in any relavant unit, SI or imperial (Celsius, Kelvin, Fahrenheit or Rankine).
+
+```python
+Temperature = T(25)
+print(Temperature.C, Temperature.K, Temperature.F, Temperature.R)
+```
+
 ### Cascadable Running/Retained Average 
 The first challenge is that AQI requires a 24 hour average measurement and embedded systems can rest at any time. The second is if you're sampling at 1 second intervals that's 86400 (60*60*24) samples to average.
 
@@ -130,13 +137,9 @@ pm25_24h = CRR_AVG(24, jfile = "pm25_24h")    # daily average (retained)
 pm25_60m = CRR_AVG(60, pm25_24h)              # hourly average
 pm25_60s = CRR_AVG(60, pm25_60m)              # minutely average
 ```
-### Unit Conversion
-Weather calculations are notorious for mixing SI and imperial units and combining constants making them difficult to follow. Even with SI it's not uncommon to switch back and forth between units like Celsius and Kelvin.
 
-To simplify, pass an SI value (Celsius) when you initialize a unit conversion object. You can then retrieve the value in any relavant unit, SI or imperial (Celsius, Kelvin, Fahrenheit or Rankine).
+### AQI Air Quality Index
+The [Air Quality Index](https://en.wikipedia.org/wiki/Air_quality_index) and 
+[NowCast](https://en.wikipedia.org/wiki/NowCast_(air_quality_index)). Not defined in those standards but useful for what I'm doing i've also included a 1 minute AQI.
 
-```python
-Temperature = T(25)
-print(Temperature.C, Temperature.K, Temperature.F, Temperature.R)
-```
-
+### IAQ Indoor Air Quality
