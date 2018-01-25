@@ -44,7 +44,7 @@ https://cdn-shop.adafruit.com/product-files/3686/plantower-pms5003-manual_v2-3.p
 
 ## MODBUS Register Map
 ### System
-40001   Quality Control (3.14159265359)
+>40001   Quality Control (3.14159265359)
 
 ### Measured BME680
 40003   Temperature (C)
