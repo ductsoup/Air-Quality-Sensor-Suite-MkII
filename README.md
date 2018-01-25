@@ -105,6 +105,6 @@ specify which to use when we create the instance.
 ## Cascadable running/retained average class
 Embedded systems can reboot/rest randomly but AQI requires a 24 hour avergage. To work around this problem, this class allows you to define  a one second sample aggregated to a one minute average, cascaded to a one hour average, cascaded to a one day average (lather, rise and repeat for weekly, monthly or annual), writing the results to storage and reloading as necessary between resets. 
 
-The caveat is that SD cards have a limited number of write cycles so this code writes hourly.
+The caveat is that SD cards have a limited number of write cycles so I've chosen the compromise of writing hourly.
 
 
