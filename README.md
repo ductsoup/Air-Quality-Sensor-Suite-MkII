@@ -126,5 +126,11 @@ The caveat with SD storage is you have a finite number of write cycles. To start
 As you're building history to whatever average, the class will provide the best approximation available. 
 
 ### Unit Conversion
-Weather calculations are notorious for mixing SI and imperial units and combining constants making them sometimes difficult to follow. Even with SI it's common to switch back and forth between units likke Celsius and Kelvin. To simplify, pass an SI value when you initialize the object. You can then read the value in any relavant unit, SI or imperial.
+Weather calculations are notorious for mixing SI and imperial units and combining constants making them difficult to follow. Even with SI it's not uncommon to switch back and forth between units like Celsius and Kelvin.
+
+To simplify, pass an SI value (Celsius) when you initialize a unit conversion object. You can then retrieve the value in any relavant unit, SI or imperial (Celsius, Kelvin, Fahrenheit or Rankine).
+
+```python
+Temperature = T(25)
+print(Temperature.f)
 
