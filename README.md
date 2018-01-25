@@ -102,11 +102,5 @@ specify which to use when we create the instance.
 40095   VOC 60 minute average (kOhm)
 40097   VOC 24 hour average (kOhm)
 ```
-## Calculated AQI
-```  0 -  50 Good
- 51 - 100 Moderate
-101 - 150 Unhealthy for sensitive groups
-151 - 200 Unhealthy
-201 - 300 Very unhealth
-301 - 500 Hazardous
-```
+## Cascadable running/retained average class
+Embedded systems can reboot/rest randomly. 
