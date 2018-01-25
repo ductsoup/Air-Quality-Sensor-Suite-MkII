@@ -24,22 +24,22 @@ https://github.com/ljean/modbus-tk
 ### Pigpio
 http://abyz.me.uk/rpi/pigpio/index.html
 
-This is used to bitbang GPIO 18 to interface with the PMS5003, just pick another pin 
-if that's inconvenient for what you have in mind. 
+This is used to bitbang GPIO 18 to interface with the PMS5003, just pick another pin if that's inconvenient. 
 
 ### Pimoroni BME680
 https://github.com/pimoroni/bme680
 
-I'm using an Adafruit breakout board with the Pimoroni library for their breakout
-board. The only difference between the two is the default I2C address so we just
-specify which to use when we create the instance like this ```bme680.BME680(i2c_addr=0x77)```.
+I'm using an Adafruit breakout board with the Pimoroni library for their breakout board. The only difference between the two is the default I2C address so we just specify which to use when we create the instance like this ```bme680.BME680(i2c_addr=0x77)```. 
 
 ## Sensors/Interfaces
-### BME680 (I2C)
-https://cdn-shop.adafruit.com/product-files/3660/BME680.pdf
+### BME680 (I2C) 
+[datasheet](https://cdn-shop.adafruit.com/product-files/3660/BME680.pdf)
+https://shop.pimoroni.com/products/bme680
+https://www.adafruit.com/product/3660
 
 ### PMS5003 (software serial)
-https://cdn-shop.adafruit.com/product-files/3686/plantower-pms5003-manual_v2-3.pdf
+[datasheet](https://cdn-shop.adafruit.com/product-files/3686/plantower-pms5003-manual_v2-3.pdf)
+https://www.adafruit.com/product/3686
 
 ![wiring](/img/aqm-mk-II_bb1.jpg)
 
