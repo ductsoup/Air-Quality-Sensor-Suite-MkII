@@ -36,6 +36,8 @@ specify which to use when we create the instance.
 
 [PMS5003 Software serial](https://cdn-shop.adafruit.com/product-files/3686/plantower-pms5003-manual_v2-3.pdf)
 
+!(/img/aqm-mk-II_bb1.jpg)
+
 ## MODBUS Register Map
 ### System
 ```
