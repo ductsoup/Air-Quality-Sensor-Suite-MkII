@@ -139,7 +139,7 @@ pm25_60s = CRR_AVG(60, pm25_60m)              # minutely average
 ```
 
 ### Derived Weather Variables
-This class approximates dewpoint and air density.
+This class approximates dewpoint and air density from the BME680 measurements.
 
 ### AQI Air Quality Index and NowCast
 The [Air Quality Index](https://en.wikipedia.org/wiki/Air_quality_index) and 
