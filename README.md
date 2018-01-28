@@ -155,3 +155,5 @@ There isn't a generally accepted standard for indoor air quality that I am aware
 
 ## Enclosure
 ![enclosure](/img/IMG_3570.JPG)
+
+For the enclosure I customized [The Ultimate box maker](https://www.thingiverse.com/thing:1264391). 
