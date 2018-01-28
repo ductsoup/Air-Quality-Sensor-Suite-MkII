@@ -15,6 +15,7 @@ As a practical matter you'll probably want to set this script up to run as a ser
 with systemd rather than using cron or rc.local. 
 
 https://www.raspberrypi.org/documentation/linux/usage/systemd.md
+https://github.com/joan2937/pigpio/tree/master/util
 
 ## Requirements
 
