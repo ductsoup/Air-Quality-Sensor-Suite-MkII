@@ -154,6 +154,6 @@ Currently the class implements only the PM2.5 and PM10 components of AQI. It is 
 There isn't a generally accepted standard for indoor air quality that I am aware of however, Bosch has provided a closed source binary called [BSEC](https://www.bosch-sensortec.com/bst/products/all_products/BSEC) for use with the BME680 to do that calculation. Based on the description in the datasheet they're likely doing something similar to what is implemented in the IAQ class. 
 
 ## Enclosure
-![enclosure](/img/IMG_3570.JPG)
-
 For the enclosure I customized [The Ultimate box maker](https://www.thingiverse.com/thing:1264391). 
+
+![enclosure](/img/IMG_3570.JPG)
