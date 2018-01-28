@@ -159,3 +159,4 @@ For the enclosure I customized [The Ultimate box maker](https://www.thingiverse.
 My 3D printer didn't do a good job on the 2.05mm tap drill holes for the Pi Zero W so I opened those up with a 5/64 drill, ran a M2.5x0.45 tap through by hand then finished up with some M2.5 nylon screws (Amazon is your friend for hard to find items like this).
 
 ![enclosure](/img/IMG_3570.JPG)
+![enclosure](/img/enclosure.png)
