@@ -107,7 +107,7 @@ PCB04FootHole        = 3;
 //Coque haut - Top shell
 TShell          = 0;// [0:No, 1:Yes]
 //Coque bas- Bottom shell
-BShell          = 1;// [0:No, 1:Yes]
+BShell          = 0;// [0:No, 1:Yes]
 //Panneau avant - Front panel
 FPanL           = 1;// [0:No, 1:Yes]
 //Panneau arrière - Back panel  
