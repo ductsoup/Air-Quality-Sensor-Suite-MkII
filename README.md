@@ -168,7 +168,7 @@ Added support for the SGP30 VOC and eCO2 sensor (software to follow).
 * [datasheet](https://cdn-learn.adafruit.com/assets/assets/000/050/058/original/Sensirion_Gas_Sensors_SGP30_Datasheet_EN.pdf)
 * https://www.adafruit.com/product/3709
 
-Added Eagle files for a custom Pi Hat which has been tested. 
+Added Eagle files for a custom Pi Hat which has been verified good. 
 
 ![enclosure](/img/rev1-build.jpg)
 ![enclosure](/img/rev1-i2c.jpg)
