@@ -162,14 +162,15 @@ My 3D printer didn't do such a good job on the 2.05mm tap drill holes for mounti
 ![enclosure](/img/enclosure.png)
 
 ## Rev 1
-Added support for the SGP30 VOC and eCO2 sensor (software to follow).
+I added support for the SGP30 VOC and eCO2 sensor (software to follow).
 
 ### SGP30 (I2C) 
 * [datasheet](https://cdn-learn.adafruit.com/assets/assets/000/050/058/original/Sensirion_Gas_Sensors_SGP30_Datasheet_EN.pdf)
 * https://www.adafruit.com/product/3709
 
-Added Eagle files for a custom Pi Hat which has been verified good. 
+I also added Eagle files for a custom Pi Hat which has been verified good (Sunstone).
 
 ![enclosure](/img/rev1-build.jpg)
 ![enclosure](/img/rev1-i2c.jpg)
 
+The proto-board build above works great but it's tedious and somewhat error prone to construct. Populating the PCB is pretty easy. It's taking far longer to 3D print the enclosure than do the build and configure the software on the Pi Zero W.
