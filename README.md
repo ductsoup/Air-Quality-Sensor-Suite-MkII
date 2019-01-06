@@ -176,13 +176,13 @@ I also added Eagle files for a custom Pi Hat which has been verified good (Sunst
 The perma-proto board construction above works great but it's a little tedious and somewhat error prone to build. Populating the custom PCB is easy. It's actually taking far longer to 3D print the enclosure than do the build and configure the software on the Pi Zero W.
 
 ```
-40087   CO2 equivalent (ppm)
-40089   VOC (ppb)
-40091   Absolute Humidity (g/m^3)
-40093   CO2 equivalent 60 second average (ppm)
-40095   CO2 equivalent 60 minute average (ppm)
-40097   CO2 equivalent 24 hour average (ppm)
-40099   VOC 60 second average (ppm)
-40101   VOC 60 minute average (ppm)
-40103   VOC 24 hour average (ppm)  
+40099   CO2 equivalent (ppm)
+40101   VOC (ppb)
+40103   Absolute Humidity (g/m^3)
+40105   CO2 equivalent 60 second average (ppm)
+40107   CO2 equivalent 60 minute average (ppm)
+40109   CO2 equivalent 24 hour average (ppm)
+40111   VOC 60 second average (ppm)
+40113   VOC 60 minute average (ppm)
+40115   VOC 24 hour average (ppm)  
 ```
