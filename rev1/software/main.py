@@ -54,7 +54,7 @@ if __name__ == "__main__":
     try:
         """ Initialize the MODBUS TCP slave """        
         mb_start = 40000
-        mb_len = 110
+        mb_len = 120
         server = modbus_tcp.TcpServer(address='0.0.0.0')
         server.start()
         slave_1 = server.add_slave(1)
@@ -242,15 +242,15 @@ if __name__ == "__main__":
 
                 """
                 SGP30 serial # ['0x0', '0x64', '0xef7b']
-                40087   CO2 equivalent (ppm)
-                40089   VOC (ppb)
-                40091   Absolute Humidity (g/m^3)
-                40093   CO2 equivalent 60 second average (ppm)
-                40095   CO2 equivalent 60 minute average (ppm)
-                40097   CO2 equivalent 24 hour average (ppm)
-                40099   VOC 60 second average (ppm)
-                40101   VOC 60 minute average (ppm)
-                40103   VOC 24 hour average (ppm)  
+                40099   CO2 equivalent (ppm)
+                40101   VOC (ppb)
+                40103   Absolute Humidity (g/m^3)
+                40105   CO2 equivalent 60 second average (ppm)
+                40107   CO2 equivalent 60 minute average (ppm)
+                40109   CO2 equivalent 24 hour average (ppm)
+                40111   VOC 60 second average (ppm)
+                40113   VOC 60 minute average (ppm)
+                40115   VOC 24 hour average (ppm)  
                 """
                 if (elapsed_sec > 10):
                     elapsed_sec = 0
@@ -262,17 +262,17 @@ if __name__ == "__main__":
                         s3.disable_humidity()
                 else:
                     elapsed_sec += 1
-                mb_set(40087, s3.co2eq)
+                mb_set(40099, s3.co2eq)
                 co2e_60s.y(s3.co2eq)
-                mb_set(40089, s3.tvoc)
+                mb_set(40101, s3.tvoc)
                 tvoc_60s.y(s3.tvoc)
-                mb_set(40091, s3.AH)
-                mb_set(40093, co2e_60s.avg)
-                mb_set(40095, co2e_60m.avg or co2e_60s.avg)
-                mb_set(40097, co2e_24h.avg or co2e_60m.avg or co2e_60s.avg)
-                mb_set(40099, tvoc_60s.avg)
-                mb_set(40101, tvoc_60m.avg or tvoc_60s.avg)
-                mb_set(40103, tvoc_24h.avg or tvoc_60m.avg or tvoc_60s.avg)
+                mb_set(40103, s3.AH)
+                mb_set(40105, co2e_60s.avg)
+                mb_set(40107, co2e_60m.avg or co2e_60s.avg)
+                mb_set(40109, co2e_24h.avg or co2e_60m.avg or co2e_60s.avg)
+                mb_set(40111, tvoc_60s.avg)
+                mb_set(40113, tvoc_60m.avg or tvoc_60s.avg)
+                mb_set(40115, tvoc_24h.avg or tvoc_60m.avg or tvoc_60s.avg)
                 print("co2eq = %d ppm \t tvoc = %d ppb" % (s3.co2eq, s3.tvoc))
 
             time.sleep(1)
