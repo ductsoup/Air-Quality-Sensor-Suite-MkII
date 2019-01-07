@@ -177,12 +177,12 @@ The perma-proto board construction above works great but it's a little tedious a
 
 ```
 40099   CO2 equivalent (ppm)
-40101   VOC (ppb)
-40103   Absolute Humidity (g/m^3)
-40105   CO2 equivalent 60 second average (ppm)
-40107   CO2 equivalent 60 minute average (ppm)
-40109   CO2 equivalent 24 hour average (ppm)
-40111   VOC 60 second average (ppm)
-40113   VOC 60 minute average (ppm)
-40115   VOC 24 hour average (ppm)  
+40101   CO2 equivalent 60 second average (ppm)
+40103   CO2 equivalent 60 minute average (ppm)
+40105   CO2 equivalent 24 hour average (ppm)
+40107   VOC (ppb)
+40109   VOC 60 second average (ppm)
+40111   VOC 60 minute average (ppm)
+40113   VOC 24 hour average (ppm)  
+40115   Absolute Humidity (g/m^3)
 ```
