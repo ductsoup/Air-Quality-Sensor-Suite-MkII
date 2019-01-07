@@ -1,5 +1,5 @@
 # Air-Quality-Sensor-Suite-MkII
-A simple, inexpensive but accurate air quality monitor built around a Raspberry Pi 3 or Pi Zero W with the ability to inteface with industrial SCADA systems via Modbus TCP. With a few additional lines of code in the main loop it's relatively straightfoward to push the entire collected and calculated data set to an MQTT broker.
+A simple, inexpensive but accurate air quality monitor built around a Raspberry Pi 3 or Pi Zero W with the ability to inteface with industrial SCADA systems via Modbus TCP. With a few additional lines of code in the main loop it's relatively straightfoward to push the entire collected and calculated data set to an IoT MQTT broker.
 
 The two attached sensors read temperature, pressure, humidity, VOC and particulates. The script then derives other quantities such as dewpoint, air density, air quality index (AQI), NowCast and indoor air quality (IAQ).
 
