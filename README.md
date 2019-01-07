@@ -127,6 +127,7 @@ To simplify, pass an SI value (Celsius) when you initialize a unit conversion ob
 Temperature = T(25)
 print(Temperature.C, Temperature.K, Temperature.F, Temperature.R)
 ```
+There are also unit conversion classes for pressure and density.
 
 ### Cascadable Running/Retained Average 
 The first challenge is that AQI requires a 24 hour average measurement and embedded systems can rest at any time. The second is if you're sampling at 1 second intervals that's 86400 (60*60*24) samples to average.
