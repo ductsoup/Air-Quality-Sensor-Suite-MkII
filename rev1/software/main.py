@@ -22,12 +22,18 @@ from crr_avg import *
 
 import struct
 
+""" 
+MODBUS helper for floating point holding registers 
+"""
 def mb_set(addr, val):
     """ Set a pair of MODBUS holding registers with an encoded IEEE 754 32-bit float """
-    j = struct.unpack('>HH',struct.pack('>f', float(val)))
+    j = struct.unpack('<HH',struct.pack('<f', float(val)))
     slave_1.set_values('ro', addr, j)
     return val
 
+"""
+Extend the Adafruit SGP30 class to add compensation for temperature and humidity
+"""
 class sgp30hc(adafruit_sgp30.Adafruit_SGP30):
     AH = 0  # Absolute humidity (g/m^3)
     def set_humidity(self, t, RH):
@@ -50,16 +56,28 @@ class sgp30hc(adafruit_sgp30.Adafruit_SGP30):
         buffer += arr
         return self._run_profile(["disable_humidity", [0x20, 0x61] + buffer, 0, 0.01])
 
+"""
+Main loop
+"""
 if __name__ == "__main__":
     try:
         """ Initialize the MODBUS TCP slave """        
-        mb_start = 40000
-        mb_len = 120
+        mb_start = 40001
+        mb_len = 125
         server = modbus_tcp.TcpServer(address='0.0.0.0')
         server.start()
         slave_1 = server.add_slave(1)
         slave_1.add_block('ro', cst.HOLDING_REGISTERS, mb_start, mb_len)
-        # Example: modpoll -m tcp -t 4:float -r 40001 -c 46 192.168.x.x
+        # Example: 
+        # 
+        # -0            First reference is 0 (PDU addressing) instead 1
+        # -1            Poll only once only, otherwise every poll rate interval
+        # -m tcp        MODBUS/TCP protocol (default otherwise)
+        # -t 4:float    32-bit float data type in output (holding) register table
+        # -r #          Start reference (1-65536, 100 is default)
+        # -c #          Number of values to read (1-125, 1 is default)
+        #
+        # modpoll -0 -1 -m tcp -t 4:float -r 40001 -c 58 192.168.x.x
     
         """ Initialize the BME680 """
         s1 = bme680.BME680(i2c_addr=0x77)
@@ -242,38 +260,41 @@ if __name__ == "__main__":
 
                 """
                 SGP30 serial # ['0x0', '0x64', '0xef7b']
-                40099   CO2 equivalent (ppm)
-                40101   VOC (ppb)
-                40103   Absolute Humidity (g/m^3)
-                40105   CO2 equivalent 60 second average (ppm)
-                40107   CO2 equivalent 60 minute average (ppm)
-                40109   CO2 equivalent 24 hour average (ppm)
-                40111   VOC 60 second average (ppm)
-                40113   VOC 60 minute average (ppm)
-                40115   VOC 24 hour average (ppm)  
-                """
-                if (elapsed_sec > 10):
+                Correct for temperature and humidity about once a minute
+                """ 
+                if (elapsed_sec > 59):
                     elapsed_sec = 0
                     try:
                         s3.set_humidity(wx.t.C, wx.RH)
-                        print("**** Baseline values set: co2eq = 0x%x, tvoc = 0x%x"
-                            % (s3.baseline_co2eq, s3.baseline_tvoc))
+                        #print("**** Baseline values set: co2eq = 0x%x, tvoc = 0x%x" % (s3.baseline_co2eq, s3.baseline_tvoc))
                     except:
                         s3.disable_humidity()
                 else:
                     elapsed_sec += 1
-                mb_set(40099, s3.co2eq)
-                co2e_60s.y(s3.co2eq)
-                mb_set(40101, s3.tvoc)
-                tvoc_60s.y(s3.tvoc)
-                mb_set(40103, s3.AH)
-                mb_set(40105, co2e_60s.avg)
-                mb_set(40107, co2e_60m.avg or co2e_60s.avg)
-                mb_set(40109, co2e_24h.avg or co2e_60m.avg or co2e_60s.avg)
-                mb_set(40111, tvoc_60s.avg)
-                mb_set(40113, tvoc_60m.avg or tvoc_60s.avg)
-                mb_set(40115, tvoc_24h.avg or tvoc_60m.avg or tvoc_60s.avg)
-                print("co2eq = %d ppm \t tvoc = %d ppb" % (s3.co2eq, s3.tvoc))
+
+                """              
+                40099   CO2 equivalent (ppm)
+                40101   CO2 equivalent 60 second average (ppm)
+                40103   CO2 equivalent 60 minute average (ppm)
+                40105   CO2 equivalent 24 hour average (ppm)
+                40107   VOC (ppb)
+                40109   VOC 60 second average (ppb)
+                40111   VOC 60 minute average (ppb)
+                40113   VOC 24 hour average (ppb)  
+                40115   Absolute Humidity (g/m^3)
+                """
+                co2e_60s.y(mb_set(40099, s3.co2eq))
+                mb_set(40101, co2e_60s.avg)
+                mb_set(40103, co2e_60m.avg or co2e_60s.avg)
+                mb_set(40105, co2e_24h.avg or co2e_60m.avg or co2e_60s.avg)
+
+                tvoc_60s.y(mb_set(40107, s3.tvoc))
+                mb_set(40109, tvoc_60s.avg)
+                mb_set(40111, tvoc_60m.avg or tvoc_60s.avg)
+                mb_set(40113, tvoc_24h.avg or tvoc_60m.avg or tvoc_60s.avg)
+
+                mb_set(40115, s3.AH)
+                #print("co2eq = %d ppm \t tvoc = %d ppb" % (s3.co2eq, s3.tvoc))
 
             time.sleep(1)
 
