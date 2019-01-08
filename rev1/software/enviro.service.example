@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 ExecStart=/usr/bin/python3 -u main.py
-WorkingDirectory=/home/pi/Air-Quality-Sensor-Suite-MkII/software
+WorkingDirectory=/home/pi/Air-Quality-Sensor-Suite-MkII/rev1/software
 StandardOutput=inherit
 StandardError=inherit
 Restart=always
