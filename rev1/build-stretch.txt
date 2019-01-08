@@ -1,9 +1,51 @@
+# (flash Stretch image)
+# (add ssh file to root directory)
+# (add wpa_supplicant.conf file to root directory)
+# 192.168.x.143
+
+passwd
+
 sudo apt-get update
-sudo apt-get -y install git python-setuptools python3-setuptools
-sudo apt-get -y install python-smbus python3-smbus i2c-tools
-sudo apt-get -y install python-pip python3-pip
-pip3 install RPi.GPIO
-pip install RPi.GPIO
+sudo apt-get -y upgrade
+sudo apt-get -y dist-upgrade
+sudo apt-get -y autoclean
+sudo apt-get -y autoremove
+
+sudo apt-get update
+sudo apt-get -y install git python3-setuptools
+sudo apt-get -y install python3-pip
+sudo apt-get -y install python3-smbus i2c-tools
+
+sudo pip3 install RPi.GPIO
+sudo pip3 install adafruit-circuitpython-bme680
 sudo pip3 install adafruit-circuitpython-sgp30
+sudo pip3 install modbus-tk
+
+sudo raspi-config
+# Network Options / N1 Hostname
+# Localisation Options / Change Wi-fi Country
+# Localisation Options / Change Timezone
+# Interfacing Options / P5 I2C (enable)
+# Advanced Options / A1 Expand Filesystem
+# (finish and reboot)
+
+rm pigpio.zip
+sudo rm -rf PIGPIO
+wget abyz.me.uk/rpi/pigpio/pigpio.zip
+unzip pigpio.zip
+cd PIGPIO
+make
+sudo make install
+sudo ./x_pigpio
+sudo crontab -e
+#@reboot              /usr/local/bin/pigpiod
+sudo reboot
+
+htop
+# confirm pigpiod started at boot
 sudo i2cdetect -y 1
+# Confirm the BME680 (0x77) and SGP30 (0x58) are available
+
+git clone https://github.com/ductsoup/Air-Quality-Sensor-Suite-MkII.git
+cd Air-Quality-Sensor-Suite-MkII/rev1/software
 
