@@ -163,13 +163,13 @@ My 3D printer didn't do such a good job on the 2.05mm tap drill holes for mounti
 ![enclosure](/img/enclosure.png)
 
 ## Rev 1 10/09/2018
-I added support for the SGP30 VOC and eCO2 sensor (software updates to follow).
+I added support for the SGP30 VOC and eCO2 sensor.
 
 ### SGP30 (I2C) 
 * [datasheet](https://cdn-learn.adafruit.com/assets/assets/000/050/058/original/Sensirion_Gas_Sensors_SGP30_Datasheet_EN.pdf)
 * https://www.adafruit.com/product/3709
 
-I also added Eagle files for a custom Pi Hat which has been verified good (Sunstone).
+I also added Eagle files for a custom Pi Hat which I've built a couple times so it's verified good (Sunstone).
 
 ![enclosure](/img/rev1-build.jpg)
 ![enclosure](/img/rev1-i2c.jpg)
