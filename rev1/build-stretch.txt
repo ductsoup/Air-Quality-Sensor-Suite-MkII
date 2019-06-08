@@ -20,6 +20,7 @@ sudo pip3 install RPi.GPIO
 sudo pip3 install adafruit-circuitpython-bme680
 sudo pip3 install adafruit-circuitpython-sgp30
 sudo pip3 install modbus-tk
+sudo pip3 install adafruit-io
 
 sudo raspi-config
 # Network Options / N1 Hostname
